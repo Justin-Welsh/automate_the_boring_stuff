@@ -1,0 +1,1 @@
+My answers to the practice projects in [Automate The Boring Stuff](https://automatetheboringstuff.com/) by Al Sweigart.
