@@ -4,6 +4,8 @@ in chunks and with the nested 'if' statements as I've done. But it works
 for now so whatever.
 """
 
+# Takes a password string and uses regex to see if it is strong i.e.
+# at least 1 lower and upper case letter and at least one digit.
 import re
 
 def password_detection(password):

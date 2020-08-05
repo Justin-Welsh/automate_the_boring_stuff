@@ -1,17 +1,15 @@
-"""
-Does not work in the DAY/MONTH/YEAR format as asked for in the book.
-It also does not check if the date is valid or not
-"""
+#! python3
 
-
+# Enter a string and scan to see if there are any dates in it
+# using regex
 
 import re
 
 def find_dates(list_of_dates):
 	date_detector = re.compile(r'''
-	([0-3][0-9]) 						# month - Any two digits between 00 and 39
+	([0-3][0-9]) 						# day - Any two digits between 00 and 39
 	\/
-	([0-1][0-9]) 						# day - Any two digits between 01 and 19
+	([0-1][0-9]) 						# month - Any two digits between 01 and 19
 	\/
 	([1-2][0-9][0-9][0-9]) 				# year - any four digits between 1000 and 2999
 	''', re.VERBOSE)
@@ -27,13 +25,13 @@ def find_dates(list_of_dates):
 		full_date = ""
 		full_date = full_date.join(day + "/" + month + "/" + year)
 
-		# Months can't be larger than 13
+		# Day can't be larger than 32
 		if day.startswith("3"):
 			if int(month[1]) > 2:
 				print("No valid date found.")
 				continue
 		
-		# Days can't be larger than 32
+		# Months can't be larger than 13
 		if month.startswith("1"):
 			if int(day[1]) > 2:
 				print("No valid date found.")
