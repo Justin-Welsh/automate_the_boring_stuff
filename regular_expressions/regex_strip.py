@@ -6,7 +6,10 @@
 import re
 
 def regex_strip(string, char_to_remove=None):
-    stripping_regex = re.compile(f'{char_to_remove}')
+    stripping_regex = re.compile(r'' + char_to_remove)
+    mo = stripping_regex.search(string)
+
+    print(f'{mo}')
 
     # TODO: Set up the regex basics
 
